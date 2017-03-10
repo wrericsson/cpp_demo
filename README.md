@@ -1,2 +1,3 @@
 # cpp_demo
-# cpp_demo
+easy complile:  g++ !!!!.cpp
+run: ./a.out
