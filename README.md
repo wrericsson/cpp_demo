@@ -1,3 +1,6 @@
 # cpp_demo
-easy complile:  g++ !!!!.cpp
-run: ./a.out
+
+go into sub dir and run make or make clean
+
+#easy complile:  g++ !!!!.cpp
+#run: ./a.out
