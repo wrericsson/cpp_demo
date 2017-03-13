@@ -24,8 +24,9 @@ template <typename T>
 class Singleton
 {
 private:
-    struct Proxy
+    class Proxy
     {
+    public:
         Proxy() : instance_(0)
         {
         }
@@ -63,6 +64,7 @@ private:
     };
     TF_DISALLOW_COPY_AND_ASSIGN(Singleton);
     static Proxy proxy_;
+    static int  abc_;
 protected:
     Singleton(){}
     ~Singleton(){}
@@ -95,7 +97,10 @@ public:
         proxy_.deleteInstance();
     }
 };
-//template <class T> Proxy Singleton<T>::proxy_ = NULL;
+template <class T> 
+class Singleton<T>::Proxy Singleton<T>::proxy_;
+template <class T> 
+int  Singleton<T>::abc_ = 100;
 
 //class SomeMustBeOneObject : private Singleton<SomeMustBeOneObject>
 //{};
@@ -104,11 +109,12 @@ public:
 int main(int argc,char* arcv[])
 {
 
-//char* o1 = Singleton<char>::getInstancePtr();
+char* o1 = Singleton<char>::getInstancePtr();
 char* o2 = Singleton<char>::getInstancePtr();
 //SomeMustBeOneObject& o3 = Singleton<SomeMustBeOneObject>::getInstanceRef();
-        //if ( o1== o2)
-		//cout <<"1 = 2\n"<< endl;
+        if ( o1== o2)
+		cout <<"1 = 2\n"<< endl;
+
 	return 0;
 }
 

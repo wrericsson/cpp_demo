@@ -3,10 +3,10 @@ C_STANDARD = -lpthread -std=c++11
 INCLUDE_DIR = inc -I/usr/include/SDL
 SOURCES_DIR = ./
 BUILD_DIR = ./
-APPLICATION_NAME = test
+APPLICATION_NAME = singleton
 FILENAME = ${BUILD_DIR}/${APPLICATION_NAME}
-CFLAGS = -Wall -ansi ${C_STANDARD}
-LDFLAGS = -lSDL $(sdl-config --static-libs) -lm
+CFLAGS = -Wall -v -ansi ${C_STANDARD}
+LDFLAGS = -lm -v
 DEBUG_SUFFIX = _debug
 CFLAGS_DEBUG = -v -gdwarf-2 -DDEBUG
 OBJS = ${SOURCES_DIR}/*.cpp
