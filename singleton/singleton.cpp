@@ -102,18 +102,22 @@ class Singleton<T>::Proxy Singleton<T>::proxy_;
 template <class T> 
 int  Singleton<T>::abc_ = 100;
 
-//class SomeMustBeOneObject : private Singleton<SomeMustBeOneObject>
-//{};
+class SomeMustBeOneObject : private Singleton<SomeMustBeOneObject>
+{};
 
 
 int main(int argc,char* arcv[])
 {
 
-char* o1 = Singleton<char>::getInstancePtr();
-char* o2 = Singleton<char>::getInstancePtr();
-//SomeMustBeOneObject& o3 = Singleton<SomeMustBeOneObject>::getInstanceRef();
-        if ( o1== o2)
-		cout <<"1 = 2\n"<< endl;
+	//char* o1 = Singleton<char>::getInstancePtr();
+	//char* o2 = Singleton<char>::getInstancePtr();
+	SomeMustBeOneObject* o1 = Singleton<SomeMustBeOneObject>::getInstancePtr();
+	SomeMustBeOneObject* o2 = Singleton<SomeMustBeOneObject>::getInstancePtr();
+	SomeMustBeOneObject& o3 = Singleton<SomeMustBeOneObject>::getInstanceRef();
+	if ( o1== o2)
+		cout <<"o1 = o2"<< endl;
+	if ( o1== &o3)
+		cout <<"o1 = &o3"<< endl;
 
 	return 0;
 }
