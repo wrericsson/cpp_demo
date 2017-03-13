@@ -102,13 +102,12 @@ class Singleton<T>::Proxy Singleton<T>::proxy_;
 template <class T> 
 int  Singleton<T>::abc_ = 100;
 
-class SomeMustBeOneObject : private Singleton<SomeMustBeOneObject>
+class SomeMustBeOneObject : virtual public Singleton<SomeMustBeOneObject>
 {};
 
 
 int main(int argc,char* arcv[])
 {
-
 	//char* o1 = Singleton<char>::getInstancePtr();
 	//char* o2 = Singleton<char>::getInstancePtr();
 	SomeMustBeOneObject* o1 = Singleton<SomeMustBeOneObject>::getInstancePtr();
@@ -121,15 +120,5 @@ int main(int argc,char* arcv[])
 
 	return 0;
 }
-
-
-//// usage
-//assert(o1 == o2);
-//assert(o1 == &o3);
-//SomeMustBeOneObject* o4 = new SomeMustBeOneObject; // Compile Error!
-//SomeMustBeOneObject o5;
-
- 
-
 /********************************** END **********************************************/
 
