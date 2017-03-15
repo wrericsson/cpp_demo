@@ -27,19 +27,25 @@ protected:
 	
 	int _Price;
 };
+
+
 class Mp3:public AbsGoods{
 public:
 	Mp3(){_mName = "MP3"; _Price = 200;}
+	virtual AbsGoods* Clone()
+	{
+		return new Mp3(*this);
+	}
+private:	
 	Mp3(const Mp3& another)
 	{
 		_mName = another._mName;
 		_Price = another._Price;
 	}
-	virtual AbsGoods* Clone()
-	{
-		return new Mp3(*this);
-	}
 };
+
+
+
 class Computer:public AbsGoods{
 public:
 	Computer(const Computer& another)
@@ -53,6 +59,9 @@ public:
 		return new Computer(*this);
 	}
 };
+
+
+
 class Person{
 public:
 	Person(){_CountGoods = 0;}
@@ -84,6 +93,10 @@ private:
 	AbsGoods* _myGoods[10];
 	int _CountGoods;
 };
+
+
+
+
 class Mical : public Person{
 public:
 	static Mical* getMical()
@@ -100,6 +113,11 @@ private:
 	void operator = (const Mical& another);
 	static Mical* _thisMical;
 };
+
+
+
+
+
 class Merry : public Person{
 public:
 	static Merry* getMerry()

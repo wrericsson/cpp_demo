@@ -35,6 +35,8 @@ int main(int argc,char* argvi[])
 	cout<<"Merry's Goods : ";
 	merry->out();
 	cout<<endl;
+	//free(Mp3);
+	//delete(Computer);
 	return 0;
 }
 
