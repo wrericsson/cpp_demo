@@ -1,0 +1,34 @@
+﻿  demo.cpp
+d:\work\testproject\cfa\cba_interprate\cba_interprate\opencv\inc\cvcompat.h(784): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+d:\work\testproject\cfa\cba_interprate\cba_interprate\demo.h(40): warning C4005: “MAX”: 宏重定义
+  d:\work\testproject\cfa\cba_interprate\cba_interprate\opencv\inc\cxtypes.h(188): note: 参见“MAX”的前一个定义
+d:\work\testproject\cfa\cba_interprate\cba_interprate\demo.h(41): warning C4005: “MIN”: 宏重定义
+  d:\work\testproject\cfa\cba_interprate\cba_interprate\opencv\inc\cxtypes.h(184): note: 参见“MIN”的前一个定义
+d:\work\testproject\cfa\cba_interprate\cba_interprate\demo.cpp(11): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\stdio.h(205): note: 参见“fopen”的声明
+d:\work\testproject\cfa\cba_interprate\cba_interprate\demo.cpp(297): warning C4244: “=”: 从“double”转换到“int”，可能丢失数据
+d:\work\testproject\cfa\cba_interprate\cba_interprate\demo.cpp(306): warning C4244: “=”: 从“double”转换到“int”，可能丢失数据
+d:\work\testproject\cfa\cba_interprate\cba_interprate\demo.cpp(315): warning C4244: “=”: 从“double”转换到“int”，可能丢失数据
+d:\work\testproject\cfa\cba_interprate\cba_interprate\demo.cpp(324): warning C4244: “=”: 从“double”转换到“int”，可能丢失数据
+  CBA_interprate.cpp
+d:\work\testproject\cfa\cba_interprate\cba_interprate\opencv\inc\cvcompat.h(784): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+d:\work\testproject\cfa\cba_interprate\cba_interprate\demo.h(40): warning C4005: “MAX”: 宏重定义
+  d:\work\testproject\cfa\cba_interprate\cba_interprate\opencv\inc\cxtypes.h(188): note: 参见“MAX”的前一个定义
+d:\work\testproject\cfa\cba_interprate\cba_interprate\demo.h(41): warning C4005: “MIN”: 宏重定义
+  d:\work\testproject\cfa\cba_interprate\cba_interprate\opencv\inc\cxtypes.h(184): note: 参见“MIN”的前一个定义
+d:\work\testproject\cfa\cba_interprate\cba_interprate\cba_interprate.cpp(836): warning C4244: “=”: 从“unsigned int”转换到“float”，可能丢失数据
+d:\work\testproject\cfa\cba_interprate\cba_interprate\cba_interprate.cpp(837): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
+d:\work\testproject\cfa\cba_interprate\cba_interprate\cba_interprate.cpp(1270): warning C4244: “=”: 从“double”转换到“int”，可能丢失数据
+d:\work\testproject\cfa\cba_interprate\cba_interprate\cba_interprate.cpp(1271): warning C4244: “=”: 从“double”转换到“int”，可能丢失数据
+d:\work\testproject\cfa\cba_interprate\cba_interprate\cba_interprate.cpp(1272): warning C4244: “=”: 从“double”转换到“int”，可能丢失数据
+d:\work\testproject\cfa\cba_interprate\cba_interprate\cba_interprate.cpp(1319): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\stdio.h(205): note: 参见“fopen”的声明
+d:\work\testproject\cfa\cba_interprate\cba_interprate\cba_interprate.cpp(1711): warning C4244: “=”: 从“double”转换到“int”，可能丢失数据
+d:\work\testproject\cfa\cba_interprate\cba_interprate\cba_interprate.cpp(1720): warning C4244: “=”: 从“double”转换到“int”，可能丢失数据
+d:\work\testproject\cfa\cba_interprate\cba_interprate\cba_interprate.cpp(1729): warning C4244: “=”: 从“double”转换到“int”，可能丢失数据
+d:\work\testproject\cfa\cba_interprate\cba_interprate\cba_interprate.cpp(1738): warning C4244: “=”: 从“double”转换到“int”，可能丢失数据
+d:\work\testproject\cfa\cba_interprate\cba_interprate\cba_interprate.cpp(1816): warning C4244: “=”: 从“float”转换到“int”，可能丢失数据
+d:\work\testproject\cfa\cba_interprate\cba_interprate\cba_interprate.cpp(1833): warning C4244: “=”: 从“float”转换到“int”，可能丢失数据
+  正在生成代码...
+  CBA_Interprate.vcxproj -> D:\work\TestProject\CFA\CBA_Interprate\Debug\CBA_Interprate.exe
+  CBA_Interprate.vcxproj -> D:\work\TestProject\CFA\CBA_Interprate\Debug\CBA_Interprate.pdb (Full PDB)
