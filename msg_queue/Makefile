@@ -1,0 +1,24 @@
+CC = g++
+C_STANDARD = -std=c++11
+INCLUDE_DIR = inc -I/usr/include/SDL
+SOURCES_DIR = ./
+BUILD_DIR = ./
+APPLICATION_NAME = msg_queue
+FILENAME = ${BUILD_DIR}/${APPLICATION_NAME}
+CFLAGS = -Wall -v -ansi ${C_STANDARD}
+LDFLAGS = -lm -v -lpthread
+DEBUG_SUFFIX = _debug
+CFLAGS_DEBUG = -v -gdwarf-2 -DDEBUG
+OBJS = ${SOURCES_DIR}/*.cpp
+
+all : ${FILENAME} ${FILENAME}${DEBUG_SUFFIX}
+
+${FILENAME}: ${OBJS}
+	${CC} ${CFLAGS} -o $@ $^ -I${INCLUDE_DIR} ${LDFLAGS}
+
+${FILENAME}${DEBUG_SUFFIX}: ${OBJS}
+	${CC} ${CFLAGS} ${CFLAGS_DEBUG} -o $@ $^ -I${INCLUDE_DIR} ${LDFLAGS} 
+
+clean:
+	${RM} *.o ${FILENAME} ${FILENAME}${DEBUG_SUFFIX}
+	${RM} -rf ${BUILD_DIR}/*.dSYM
