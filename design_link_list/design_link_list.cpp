@@ -4,7 +4,7 @@
  *    Description:   source file
  *
  *        Version:  1.0
- *        Created:  2017-04-10 11:37:58
+ *        Created:  2018-04-10 11:37:58
  *
  *       Revision:  initial draft;
  **************************************************************************************
@@ -15,7 +15,7 @@
 #include <iostream>
 
 #include <memory>
-
+#include <algorithm>
 using namespace std;
 
 class MyLinkedList {
@@ -132,12 +132,12 @@ class MyLinkedList {
 		/** Delete the index-th node in the linked list, if the index is valid. */
 		void deleteAtIndex(int index) {
 
-			if (index + 1 > count) {
+			if (index  > count) {
 				return;
 			}
 
 			auto ptr = head;
-			for (int i = 0; i < index + 1; ++i) {
+			for (int i = 0; i < index ; ++i) {
 				ptr = ptr->next;
 			}
 
@@ -173,27 +173,13 @@ int main(int argc, const char *argv[])
 	obj->addAtHead(1);
 	obj->addAtHead(2);
 	//obj->addAtHead(1);
-	//obj->addAtHead(1);
-	//obj->addAtHead(1);
-	//obj->addAtTail(3);
-	//obj->addAtTail(3);
-	//obj->addAtTail(3);
-	//obj->addAtTail(3);
-	//obj->addAtTail(3);
-	//obj->addAtTail(3);
-	//obj->addAtTail(3);
 	obj->addAtTail(4);
 	obj->addAtTail(3);
 	//cout <<"add to tail" <<endl;
 	obj->addAtIndex(2,30);
-	obj->addAtIndex(2,30);
-	obj->addAtIndex(2,30);
-	obj->addAtIndex(2,30);
-	obj->addAtIndex(2,30);
-	obj->addAtIndex(2,30);
 	//cout << "get 2--"<< obj->get(2) << endl;
 	//cout << "get 2--"<< obj->get(3) << endl;
-	//obj->deleteAtIndex(2);
+	obj->deleteAtIndex(2);
 	int count = obj->getSize();
 	for (int i = 0; i < count; i++) {
 		cout << "get-----" << i << ":" <<obj->get(i) << endl;
