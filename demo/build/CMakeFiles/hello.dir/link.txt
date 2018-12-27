@@ -1,0 +1,1 @@
+/usr/bin/c++    -g3 -O0 -fPIC -g   CMakeFiles/hello.dir/src/Tk1ClientMain.cc.o  -o bin/hello -lglog -lpthread -lboost_thread -lboost_system -lboost_chrono -pthread /usr/lib/x86_64-linux-gnu/libQtGui.so /usr/lib/x86_64-linux-gnu/libQtCore.so -lcrypto -lssl 

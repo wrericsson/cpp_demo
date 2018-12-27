@@ -1,0 +1,3 @@
+/home/wangrui/workstation/demo/build/CMakeFiles/edit_cache.dir
+/home/wangrui/workstation/demo/build/CMakeFiles/rebuild_cache.dir
+/home/wangrui/workstation/demo/build/CMakeFiles/hello.dir

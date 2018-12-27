@@ -1,0 +1,98 @@
+CMAKE_MINIMUM_REQUIRED(VERSION 3.5)
+PROJECT(HELLO)
+
+ADD_DEFINITIONS(-std=c++11)
+SET(CMAKE_BUILD_TYPE "Debug")
+
+if(CMAKE_BUILD_TYPE STREQUAL "Release")
+  set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -O2 -fPIC")
+else(CMAKE_BUILD_TYPE STREQUAL "Debug")
+  set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -g3 -O0 -fPIC")
+endif(CMAKE_BUILD_TYPE STREQUAL "Release")
+
+#SET(CMAKE_CXX_FLAGS_DEBUG "$ENV{CXXFLAGS} -O0 -Wall -g2 -ggdb")
+#SET(CMAKE_CXX_FLAGS_RELEASE "$ENV{CXXFLAGS} -O3 -Wall")
+#ADD_SUBDIRECTORY(src bin)
+
+
+
+#FIND_PACKAGE(OpenCV REQUIRED)
+#include(/usr/local/share/OpenCV/OpenCVConfig.cmake)
+SET(BOOST_INCLUDEDIR "/usr/include/boost")
+find_package(Boost REQUIRED COMPONENTS thread signals)
+find_package(Qt4 4.6 COMPONENTS QtCore QtGui REQUIRED)
+include(${QT_USE_FILE})
+
+find_package(Eigen3)
+if(NOT EIGEN3_FOUND)
+  # Fallback to cmake_modules
+  find_package(cmake_modules REQUIRED)
+  find_package(Eigen REQUIRED)
+  set(EIGEN3_INCLUDE_DIRS ${EIGEN_INCLUDE_DIRS})
+  set(EIGEN3_LIBRARIES ${EIGEN_LIBRARIES})  # Not strictly necessary as Eigen is head only
+  # Possibly map additional variables to the EIGEN3_ prefix.
+else()
+  set(EIGEN3_INCLUDE_DIRS ${EIGEN3_INCLUDE_DIR})
+endif()
+
+SET(SRC_LIST
+src/Tk1ClientMain.cc
+)
+SET(INCLUDE_LIST
+    ${HELLO_SOURCE_DIR}/include/
+    ${EIGEN3_INCLUDE_DIRS}
+    /usr/local/include
+)
+
+
+SET(EXECUTABLE_OUTPUT_PATH ${PROJECT_BINARY_DIR}/bin)
+SET(LIBRARY_OUTPUT_PATH ${PROJECT_SOURCE_DIR}/lib)
+
+#FIND_LIBRARY(FIND_LIB_PROTO protobuf /usr/local/lib NO_DEFAULT_PATH)
+
+MESSAGE(STATUS "\nThis is PROJECT name: " ${PROJECT_NAME})
+MESSAGE(STATUS "This is HOME dir: " $ENV{HOME})
+MESSAGE(STATUS "This is BINARY dir: " ${PROJECT_BINARY_DIR})
+MESSAGE(STATUS "This is SOURCE dir: " ${HELLO_SOURCE_DIR})
+MESSAGE(STATUS "This is exe dir: " ${EXECUTABLE_OUTPUT_PATH})
+MESSAGE(STATUS "This is CMAKE_CXX_FLAGS: " ${CMAKE_CXX_FLAGS})
+MESSAGE(STATUS "This is CMAKE_BUILD_TYPE: " ${CMAKE_BUILD_TYPE})
+MESSAGE(STATUS "This is SRC_LIST: " ${SRC_LIST})
+MESSAGE(STATUS "This is INCLUDE_LIST: " ${INCLUDE_LIST})
+MESSAGE(STATUS "This is PROJECT_SOURCE_DIR: " ${PROJECT_SOURCE_DIR})
+#MESSAGE(STATUS "This is OpenCV_LIBS: " ${OpenCV_LIBS})
+#MESSAGE(STATUS "This is OpenCV_INSTALL_PATH: " ${OpenCV_INSTALL_PATH})
+#MESSAGE(STATUS "This is OpenCV_INCLUDE_DIRS: " ${OpenCV_INCLUDE_DIRS})
+#MESSAGE(STATUS "This is OpenCV_VERSION: " ${OpenCV_VERSION})
+MESSAGE(STATUS "This is Boost_LIBS: " ${Boost_LIBS})
+MESSAGE(STATUS "This is Boost_VERSION: " ${Boost_VERSION})
+MESSAGE(STATUS "This is Boost_INCLUDE_DIRS: " ${Boost_INCLUDE_DIRS})
+MESSAGE(STATUS "This is Boost_LIBRARIES: " ${Boost_LIBRARIES})
+MESSAGE(STATUS "This is Boost_FOUND: " ${Boost_FOUND})
+MESSAGE(STATUS "This is Boost_LIBRARY_DIRS: " ${Boost_LIBRARY_DIRS})
+MESSAGE(STATUS "This is QT_LIBRARIES: " ${QT_LIBRARIES})
+MESSAGE(STATUS "This is EIGEN3_INCLUDE_DIRS: " ${EIGEN3_INCLUDE_DIRS})
+MESSAGE(STATUS "This is PROTOBUF_INCLUDE_DIRS: " ${PROTOBUF_INCLUDE_DIRS})
+MESSAGE(STATUS "This is PROTOBUF_LIBRARIES: " ${PROTOBUF_LIBRARIES})
+MESSAGE(STATUS "This is FIND_LIB_PROTO: " ${FIND_LIB_PROTO})
+
+ADD_EXECUTABLE(hello ${SRC_LIST})
+
+#ADD_LIBRARY(hello_so SHARED ${LIB_SRC_LIST})
+
+INCLUDE_DIRECTORIES(
+${INCLUDE_LIST}
+)
+
+link_directories(
+    /usr/local/lib
+    ${LIBRARY_OUTPUT_PATH}
+)
+
+TARGET_LINK_LIBRARIES(hello -lglog -lpthread  -lboost_thread  -lboost_system -lboost_chrono -pthread
+#${OpenCV_LIBS}
+${QT_LIBRARIES}
+#-Wl,-rpath 
+/usr/local/lib
+-lcrypto -lssl
+)
